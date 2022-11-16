@@ -6,16 +6,18 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:40:33 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/15 16:48:22 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:27:11 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_compte(int n)
+int	ft_compte(int n)
 {
-	int compte = 0;
+	int	compte;
+
+	compte = 0;
 	if (n < 0)
 	{
 		compte ++;
@@ -38,47 +40,40 @@ int ft_compte(int n)
 	return (compte);
 }
 
-void ft_putnbr(int n, char *dest, int i)
+char	*ft_itoa(int n)
 {
-	if(0 <= n && n <= 9)
-	{
-		dest[i] = n + 48;
-		i++;
-	}
-	else
-	{
-		ft_putnbr((n / 10), dest, i);
-		ft_putnbr((n % 10), dest, i);
-	}
-}
+	int		i;
+	int		j;
+	char	*str;
 
-char *ft_itoa(int n)
-{
-	char *dest;
-	int taille;
-	int i;
-
-	i = 0;
-	taille = ft_compte(n);
-	dest = (char *)malloc((taille + 1) * sizeof(char));
-	if (dest)
+	j = 0;
+	if (n == -2147483648)
 	{
-		if(n < 0)
-		{
-			dest[i] = '-';
-			n = n * -1;
-			i++;
-		}
-		dest[taille +1] = '\0';
-		ft_putnbr(n / 10, dest, i);
-		ft_putnbr(n % 10, dest, i);
-		return (dest);
+		str = malloc(sizeof(char) * 12);
+		str = "-2147483648";
+		return (str);
 	}
-	return (NULL);
+	i = ft_compte(n);
+	str = malloc(sizeof(char) * (i + 1));
+	str[i] = '\0';
+	if (n == 0)
+		str[j] = n + 48;
+	else if (n < 0)
+	{
+		n = n * -1;
+		str[j] = '-';
+		j++;
+	}
+	while (j < i--)
+	{
+		str[i] = (n % 10) + 48;
+		n = n / 10;
+	}
+	return (str);
 }
 
 int main()
 {
-	int n = (106);
+	int n = (-2147483648);
 	printf("%s\n", ft_itoa(n));
 }

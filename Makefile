@@ -24,6 +24,7 @@ SRCS = ft_memset.c \
 	ft_strlen.c \
 	ft_strmapi.c \
 	ft_strlcpy.c \
+	:w
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
@@ -36,13 +37,20 @@ RM = rm -f
 
 NAME = libft.a
 
-
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	ar rcs libft.a $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
 clean : 
-	rm -f *.o
+	$(RM) *.o
+	clear
+	@echo "\e[33m 🧚‍ tout propre 🧚‍"
 
+cleant :
+	$(RM) $(NAME) *.o
+	clear
+	@echo "\e[33m 🧚 tout propre 🧚"
+
+.PHONY : clean cleant
 

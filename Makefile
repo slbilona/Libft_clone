@@ -24,7 +24,14 @@ SRCS = ft_memset.c \
 	ft_strlen.c \
 	ft_strmapi.c \
 	ft_strlcpy.c \
-	:w
+	ft_itoa.c \
+	ft_putnbr_fd.c \
+	ft_strnstr.c \
+	ft_strjoin.c \
+	ft_strlcat.c \
+	ft_strtrim.c \
+	ft_memmove.c \
+	ft_striteri.c \
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra

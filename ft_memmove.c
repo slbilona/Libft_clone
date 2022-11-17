@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove_pqs_fini.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 11:19:39 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/17 14:33:41 by ilselbon         ###   ########.fr       */
+/*   Created: 2022/11/08 14:17:21 by ilselbon          #+#    #+#             */
+/*   Updated: 2022/11/17 14:26:07 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(const char *s)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
+	const char	*s;
+	char		*d;
+	char		temp[10000];
+	size_t		i;
 
 	i = 0;
-	while (s[++i])
-		;
-	return (i);
+	s = (char *) src;
+	d = (char *) dest;
+	while (i < n)
+	{
+		temp[i] = s[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		d[i] = temp[i];
+		i++;
+	}
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:27:39 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/16 15:38:16 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:37:14 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset( void *str, int c, size_t n)
 
 	t = (char *) str;
 	i = 0;
-	while (i <= n)
+	while (i < n)
 	{
 		t[i] = c;
 		i++;
@@ -27,7 +27,7 @@ void	*ft_memset( void *str, int c, size_t n)
 	return (str);
 }
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

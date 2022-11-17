@@ -6,7 +6,7 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:59:33 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/10 11:10:38 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:14:19 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (pointer);
 	}
 	return (NULL);
-}
+}	

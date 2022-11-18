@@ -54,10 +54,11 @@ clean :
 	clear
 	@echo "\e[33m 🧚‍ tout propre 🧚‍"
 
-cleant :
+fclean :
 	$(RM) $(NAME) *.o
 	clear
 	@echo "\e[33m 🧚 tout propre 🧚"
 
-.PHONY : clean cleant
+re : $(fclean) all
 
+.PHONY : all re clean cleant

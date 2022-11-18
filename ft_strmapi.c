@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi_pas_fini.c                              :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:17:34 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/15 12:53:46 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:47:35 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 		i++;
-	result = malloc(sizeof(char) * i);
+	result = malloc(sizeof(char) * (i + 1));
 	i = 0;
 	while (s[i])
 	{

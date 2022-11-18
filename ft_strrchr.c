@@ -6,7 +6,7 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:51:25 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/09 17:28:54 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:45:38 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	l;
 
+	l = (char)c;
 	i = 1;
 	while (*s++)
 		i++;
 	while (i >= 0)
 	{
-		if (*s == c)
+		if (*s == l)
 			return ((char *)s);
 		i--;
 		s--;

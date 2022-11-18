@@ -6,7 +6,7 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:43:38 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/17 18:30:31 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:35:39 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(const char *nptr)
 			sign = sign * -1;
 		i++;
 	}
-	while ('0' <= nptr[i] && nptr[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		result = result * 10 + nptr[i] - 48;
 		i++;

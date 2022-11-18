@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy_pas_fini.c                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:25:12 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/16 15:10:05 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:48:08 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
+#include <bsd/string.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -27,9 +29,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	int	i;
 
 	i = 0;
-	if (src[i] == '\0')
-		dst[i] = '\0';
-	else if (ft_strlen(src) < size)
+	if (size == 0)
+		return (ft_strlen(src));
+	if (ft_strlen(src) < size)
 	{
 		while (src[i])
 		{

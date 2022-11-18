@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim_pas_fini.c                              :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 13:40:02 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/17 13:47:08 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/18 18:15:59 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 #include <stddef.h>
 #include <stdlib.h>
 
@@ -36,7 +37,7 @@ int	ft_compte(char const *str, char const *set, int *i)
 	j = 0;
 	while (str[*i] && (ft_verif(str[*i], set) == 1))
 		*i += 1;
-	while (str[j])
+	while (str[j] != 0)
 		j++;
 	j--;
 	while (str[j] && (ft_verif(str[j], set) == 1))
@@ -52,7 +53,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		taille;
 
 	taille = ft_compte(s1, set, &i);
-	news = malloc(taille * sizeof(char));
+	if(taille <= 0)
+	{
+		//news = malloc(sizeof(char));
+		//news[0] = 0;
+		return (ft_strdup(""));
+	}
+	news = malloc((taille + 1) * sizeof(char));
+	j = 0;
 	if (news)
 	{
 		while (s1[i] && j < taille)
@@ -66,3 +74,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (NULL);
 }
+/*
+int main()
+{
+	printf("%s\n", ft_strtrim("la_salade", "lea"));
+}*/

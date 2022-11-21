@@ -6,23 +6,12 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:25:12 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/18 12:48:08 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:04:17 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <stdio.h>
-#include <bsd/string.h>
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

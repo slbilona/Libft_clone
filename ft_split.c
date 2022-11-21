@@ -5,22 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 11:11:45 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/18 17:42:45 by ilselbon         ###   ########.fr       */
+/*   Created: 2022/11/21 14:52:42 by ilselbon          #+#    #+#             */
+/*   Updated: 2022/11/21 14:57:44 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 
-int	ft_verif(char actuel, char c)
+static	char	**ft_free_split(char **str, int k)
 {
-	if (actuel == c)
-		return (1);
-	return (0);
+	while (k >= 0)
+	{
+		free(str[k]);
+		k--;
+	}
+	return (NULL);
 }
 
-int	ft_compte_mot(char const *s, char c)
+static	int	ft_compte_mot(char const *s, char c)
 {
 	int	compte;
 	int	i;
@@ -29,24 +32,24 @@ int	ft_compte_mot(char const *s, char c)
 	compte = 0;
 	while (s[i])
 	{
-		while (s[i] && ft_verif(s[i], c) == 1)
+		while (s[i] && (s[i] == c))
 			i++;
 		if (s[i] != '\0')
 			compte++;
-		while (s[i] && ft_verif(s[i], c) == 0)
+		while (s[i] && (s[i] != c))
 			i++;
 	}
 	return (compte);
 }
 
-int	ft_taille_mot(char const *s, char c, int i)
+static	int	ft_taille_mot(char const *s, char c, int i)
 {
 	int	taille;
 
 	taille = 0;
 	while (s[i])
 	{
-		if (s[i] != '\0' && ft_verif(s[i], c) == 1)
+		if (s[i] != '\0' && (s[i] == c))
 			return (taille);
 		else
 			taille++;
@@ -55,7 +58,7 @@ int	ft_taille_mot(char const *s, char c, int i)
 	return (taille);
 }
 
-void	ft_strncpy(char const *s, char *dest, int n, int i)
+static	void	ft_strncpy(char const *s, char *dest, int n, int i)
 {
 	int	k;
 
@@ -80,12 +83,14 @@ char	**ft_split(char const *s, char c)
 	dest = (char **)malloc(sizeof(char *) * (ft_compte_mot(s, c) + 1));
 	while (k < ft_compte_mot(s, c))
 	{
-		while (s[i] && ft_verif(s[i], c) == 1)
+		while (s[i] && (s[i] == c))
 			i++;
-		if ((s[i] != '\0') && ft_verif(s[i], c) == 0)
+		if ((s[i] != '\0') && (s[i] != c))
 		{
 			dest[k] = (char *)malloc((ft_taille_mot(s, c, i) + 1)
 					* sizeof(char));
+			if (!dest[k])
+				return (ft_free_split(dest, k));
 			ft_strncpy(s, dest[k], ft_taille_mot(s, c, i), i);
 			i += ft_taille_mot(s, c, i);
 			k++;

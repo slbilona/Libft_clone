@@ -6,16 +6,15 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 13:40:02 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/18 18:15:59 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:21:58 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 #include <stddef.h>
 #include <stdlib.h>
 
-int	ft_verif(char c, char const *set)
+static	int	ft_verif(char c, char const *set)
 {
 	int	i;
 
@@ -29,7 +28,7 @@ int	ft_verif(char c, char const *set)
 	return (0);
 }
 
-int	ft_compte(char const *str, char const *set, int *i)
+static	int	ft_compte(char const *str, char const *set, int *i)
 {
 	int	j;
 
@@ -53,12 +52,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		taille;
 
 	taille = ft_compte(s1, set, &i);
-	if(taille <= 0)
-	{
-		//news = malloc(sizeof(char));
-		//news[0] = 0;
+	if (taille <= 0)
 		return (ft_strdup(""));
-	}
 	news = malloc((taille + 1) * sizeof(char));
 	j = 0;
 	if (news)
@@ -74,8 +69,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-	printf("%s\n", ft_strtrim("la_salade", "lea"));
-}*/

@@ -6,22 +6,12 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:48:36 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/18 17:52:49 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:20:14 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
-
-int	ft_strlen(char const *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

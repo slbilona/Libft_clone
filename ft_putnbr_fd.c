@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd_pas_fini.c                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:35:02 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/17 11:25:10 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:12:05 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

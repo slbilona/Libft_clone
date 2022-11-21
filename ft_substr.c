@@ -6,22 +6,12 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:49:05 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/18 17:30:08 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:15:06 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
-
-size_t	ft_strlen(char const *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

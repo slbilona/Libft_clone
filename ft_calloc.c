@@ -6,7 +6,7 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:59:33 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/21 17:39:58 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/22 11:30:23 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		nmemb = 1;
 		size = 1;
 	}
+	if ((int)size < 0)
+		return (NULL);
 	pointer = (void *)malloc(nmemb * size);
 	if (!pointer)
 		return (NULL);

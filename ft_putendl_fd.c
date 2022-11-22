@@ -6,9 +6,11 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:10:39 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/21 18:27:58 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/22 11:18:47 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {

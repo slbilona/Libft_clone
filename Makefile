@@ -51,13 +51,9 @@ $(NAME) : $(OBJS)
 
 clean : 
 	$(RM) *.o
-	clear
-	@echo "\e[33m 🧚‍ tout propre 🧚‍"
 
 fclean :
 	$(RM) $(NAME) *.o
-	clear
-	@echo "\e[33m 🧚 tout propre 🧚"
 
 re : $(fclean) all
 

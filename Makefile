@@ -57,4 +57,4 @@ fclean :
 
 re : $(fclean) all
 
-.PHONY : all re clean cleant
+.PHONY : all re clean fclean

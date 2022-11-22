@@ -6,7 +6,7 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:16:15 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/18 13:50:12 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:11:22 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr( const void *s, int c, size_t n)
 	i = 0;
 	if (n > 0)
 	{
-		while (i <= n)
+		while (i < n)
 		{
 			if (src[i] == l)
 				return ((void *) &src[i]);

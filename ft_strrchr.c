@@ -6,11 +6,12 @@
 /*   By: ilselbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:51:25 by ilselbon          #+#    #+#             */
-/*   Updated: 2022/11/22 11:38:28 by ilselbon         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:52:55 by ilselbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -18,15 +19,12 @@ char	*ft_strrchr(const char *s, int c)
 	char	l;
 
 	l = (char)c;
-	i = 1;
-	while (*s++)
-		i++;
+	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (*s == l)
-			return ((char *)s);
+		if (s[i] == l)
+			return ((char *)&s[i]);
 		i--;
-		s--;
 	}
 	return (NULL);
 }
